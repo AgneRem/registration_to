@@ -59,6 +59,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+                                    <a href="/admin" class="dropdown-item">Admin panelė</a>
+
+
                                 </div>
                             </li>
                         @endguest

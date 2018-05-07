@@ -15,6 +15,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/registrations/{registration}', 'RegistrationController@show');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth', 'admin'], function(){
   Route::get('/admin', 'RegistrationController@index');
 });
