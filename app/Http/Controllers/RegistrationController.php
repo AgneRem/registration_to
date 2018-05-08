@@ -31,7 +31,7 @@ class RegistrationController extends Controller
       $this->validate(request(), [
         'first_name' => 'required',
         'last_name' => 'required',
-        'email' => 'required'
+        'email' => 'required|unique:registrations,email'
       ]);
 
       $registration = new Registration;
@@ -39,6 +39,7 @@ class RegistrationController extends Controller
       $registration->first_name = request('first_name');
       $registration->last_name = request('last_name');
       $registration->email = request('email');
+
 
       $registration->save();
 
